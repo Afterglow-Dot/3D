@@ -5,5 +5,11 @@ order: 5
 ---
 
 {% for post in site.life.docs reversed %}
-- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
+## [{{ post.title }}]({{ post.url | relative_url }})
+
+{{ post.description }}
+
+📅 {{ post.date | date: "%Y-%m-%d" }}
+
+---
 {% endfor %}
