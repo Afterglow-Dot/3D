@@ -5,6 +5,9 @@ order: 5
 permalink: /life/
 ---
 
+{% if site.life.size == 0 %}
+正在建设中，敬请期待。
+{% else %}
 {% for post in site.life reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
@@ -14,3 +17,4 @@ permalink: /life/
 
 ---
 {% endfor %}
+{% endif %}

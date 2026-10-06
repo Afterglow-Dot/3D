@@ -4,8 +4,9 @@ icon: fas fa-flask
 order: 3
 permalink: /research/
 ---
+{% if site.research.size == 0 %}
 正在建设中，敬请期待。
-
+{% else %}
 {% for post in site.research reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
@@ -15,3 +16,4 @@ permalink: /research/
 
 ---
 {% endfor %}
+{% endif %}

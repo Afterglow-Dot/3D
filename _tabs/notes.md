@@ -4,8 +4,10 @@ icon: fas fa-book
 order: 2
 permalink: /notes/
 ---
-正在建设中，敬请期待。
 
+{% if site.notes.size == 0 %}
+正在建设中，敬请期待。
+{% else %}
 {% for post in site.notes reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
@@ -15,3 +17,4 @@ permalink: /notes/
 
 ---
 {% endfor %}
+{% endif %}
