@@ -96,7 +96,6 @@
   {% assign research_items = site.research.docs | sort: "date" | reverse %}
   {% assign life_items = site.life.docs | sort: "date" | reverse %}
   {% assign publications_items = site.publications.docs | sort: "date" | reverse %}
-  {% assign patents_items = site.patents.docs | sort: "date" | reverse %}
   <script type="application/json" id="world-data">
     {
       "site": { "title": {{ site.title | jsonify }}, "tagline": {{ site.tagline | jsonify }}, "home": {{ "/" | relative_url | jsonify }} },
@@ -105,8 +104,7 @@
         { "label": "notes", "name": "学习笔记", "color": "#b388ff", "items": {% include world-items.html items=notes_items %} },
         { "label": "research", "name": "科研进展", "color": "#ffab40", "items": {% include world-items.html items=research_items %} },
         { "label": "life", "name": "生活随笔", "color": "#ff8a80", "items": {% include world-items.html items=life_items %} },
-        { "label": "publications", "name": "论文", "color": "#ffd54f", "items": {% include world-items.html items=publications_items %} },
-        { "label": "patents", "name": "专利", "color": "#69f0ae", "items": {% include world-items.html items=patents_items %} }
+        { "label": "publications", "name": "论文", "color": "#ffd54f", "items": {% include world-items.html items=publications_items %} }
       ]
     }
   </script>

@@ -8,7 +8,6 @@ CONTENT_PREFIXES = %w[
   _research/
   _life/
   _publications/
-  _patents/
 ].freeze
 
 Jekyll::Hooks.register :documents, :post_init do |doc|

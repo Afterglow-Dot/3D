@@ -1,5 +1,9 @@
 ---
-title: 生活随笔
+title: 日常记录
 icon: fas fa-coffee
-order: 6
+order: 5
 ---
+
+{% for post in site.life.docs reversed %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
+{% endfor %}
