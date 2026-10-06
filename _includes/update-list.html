@@ -12,42 +12,42 @@
   {% assign all_list = all_list | push: elem %}
 {% endfor %}
 
-{% for doc in site.ai %}
+{% for doc in site.notes.docs %}
   {% assign datetime = doc.last_modified_at | default: doc.date %}
   {% capture elem %}
-    {{- datetime | date: "%Y%m%d%H%M%S" -}}::ai::{{- forloop.index0 -}}
+    {{- datetime | date: "%Y%m%d%H%M%S" -}}::notes::{{- forloop.index0 -}}
   {% endcapture %}
   {% assign all_list = all_list | push: elem %}
 {% endfor %}
 
-{% for doc in site.open %}
+{% for doc in site.research.docs %}
   {% assign datetime = doc.last_modified_at | default: doc.date %}
   {% capture elem %}
-    {{- datetime | date: "%Y%m%d%H%M%S" -}}::open::{{- forloop.index0 -}}
+    {{- datetime | date: "%Y%m%d%H%M%S" -}}::research::{{- forloop.index0 -}}
   {% endcapture %}
   {% assign all_list = all_list | push: elem %}
 {% endfor %}
 
-{% for doc in site.tutorials %}
-  {% assign datetime = doc.last_modified_at | default: doc.date %}
-  {% capture elem %}
-    {{- datetime | date: "%Y%m%d%H%M%S" -}}::tutorials::{{- forloop.index0 -}}
-  {% endcapture %}
-  {% assign all_list = all_list | push: elem %}
-{% endfor %}
-
-{% for doc in site.books %}
-  {% assign datetime = doc.last_modified_at | default: doc.date %}
-  {% capture elem %}
-    {{- datetime | date: "%Y%m%d%H%M%S" -}}::books::{{- forloop.index0 -}}
-  {% endcapture %}
-  {% assign all_list = all_list | push: elem %}
-{% endfor %}
-
-{% for doc in site.life %}
+{% for doc in site.life.docs %}
   {% assign datetime = doc.last_modified_at | default: doc.date %}
   {% capture elem %}
     {{- datetime | date: "%Y%m%d%H%M%S" -}}::life::{{- forloop.index0 -}}
+  {% endcapture %}
+  {% assign all_list = all_list | push: elem %}
+{% endfor %}
+
+{% for doc in site.publications.docs %}
+  {% assign datetime = doc.last_modified_at | default: doc.date %}
+  {% capture elem %}
+    {{- datetime | date: "%Y%m%d%H%M%S" -}}::publications::{{- forloop.index0 -}}
+  {% endcapture %}
+  {% assign all_list = all_list | push: elem %}
+{% endfor %}
+
+{% for doc in site.patents.docs %}
+  {% assign datetime = doc.last_modified_at | default: doc.date %}
+  {% capture elem %}
+    {{- datetime | date: "%Y%m%d%H%M%S" -}}::patents::{{- forloop.index0 -}}
   {% endcapture %}
   {% assign all_list = all_list | push: elem %}
 {% endfor %}
@@ -71,16 +71,16 @@
 
         {% if col == 'posts' %}
           {% assign post = site.posts[index] %}
-        {% elsif col == 'ai' %}
-          {% assign post = site.ai[index] %}
-        {% elsif col == 'open' %}
-          {% assign post = site.open[index] %}
-        {% elsif col == 'tutorials' %}
-          {% assign post = site.tutorials[index] %}
-        {% elsif col == 'books' %}
-          {% assign post = site.books[index] %}
+        {% elsif col == 'notes' %}
+          {% assign post = site.notes.docs[index] %}
+        {% elsif col == 'research' %}
+          {% assign post = site.research.docs[index] %}
         {% elsif col == 'life' %}
-          {% assign post = site.life[index] %}
+          {% assign post = site.life.docs[index] %}
+        {% elsif col == 'publications' %}
+          {% assign post = site.publications.docs[index] %}
+        {% elsif col == 'patents' %}
+          {% assign post = site.patents.docs[index] %}
         {% endif %}
 
         {% assign url = post.url | relative_url %}

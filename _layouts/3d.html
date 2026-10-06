@@ -92,11 +92,11 @@
   </script>
 </head>
 <body>
-  {% assign notes_items = site.notes.docs | default: empty | sort: "date" | reverse %}
-  {% assign research_items = site.research.docs | default: empty | sort: "date" | reverse %}
-  {% assign life_items = site.life.docs | default: empty | sort: "date" | reverse %}
-  {% assign publications_items = site.publications.docs | default: empty | sort: "date" | reverse %}
-  {% assign patents_items = site.patents.docs | default: empty | sort: "date" | reverse %}
+  {% assign notes_items = site.notes.docs | sort: "date" | reverse %}
+  {% assign research_items = site.research.docs | sort: "date" | reverse %}
+  {% assign life_items = site.life.docs | sort: "date" | reverse %}
+  {% assign publications_items = site.publications.docs | sort: "date" | reverse %}
+  {% assign patents_items = site.patents.docs | sort: "date" | reverse %}
   <script type="application/json" id="world-data">
     {
       "site": { "title": {{ site.title | jsonify }}, "tagline": {{ site.tagline | jsonify }}, "home": {{ "/" | relative_url | jsonify }} },
