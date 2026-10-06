@@ -2,5 +2,6 @@
 layout: tags
 title: 标签
 icon: fas fa-tags
-order: 8
+order: 7
+permalink: /tags/
 ---

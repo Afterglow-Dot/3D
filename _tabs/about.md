@@ -2,6 +2,7 @@
 title: 关于我
 icon: fas fa-user
 order: 1
+permalink: /about/
 ---
 
 大家好！我是一名合肥工业大学通信工程专业的硕士研究生，目前研一在读。

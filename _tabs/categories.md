@@ -2,5 +2,6 @@
 layout: categories
 title: 分类
 icon: fas fa-stream
-order: 7
+order: 6
+permalink: /categories/
 ---

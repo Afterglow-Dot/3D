@@ -2,6 +2,7 @@
 title: 日常记录
 icon: fas fa-coffee
 order: 5
+permalink: /life/
 ---
 
 {% for post in site.life.docs reversed %}
