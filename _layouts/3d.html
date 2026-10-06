@@ -92,23 +92,21 @@
   </script>
 </head>
 <body>
-  {% assign ai_items = site.ai | sort: "date" | reverse %}
-  {% assign open_items = site.open | sort: "date" | reverse %}
-  {% assign books_items = site.books | sort: "date" | reverse %}
-  {% assign life_items = site.life | sort: "date" | reverse %}
-  {% assign viewed_items = site.viewed | sort: "date" | reverse %}
-  {% assign tutorials_items = site.tutorials | sort: "date" | reverse %}
+  {% assign notes_items = site.notes.docs | default: empty | sort: "date" | reverse %}
+  {% assign research_items = site.research.docs | default: empty | sort: "date" | reverse %}
+  {% assign life_items = site.life.docs | default: empty | sort: "date" | reverse %}
+  {% assign publications_items = site.publications.docs | default: empty | sort: "date" | reverse %}
+  {% assign patents_items = site.patents.docs | default: empty | sort: "date" | reverse %}
   <script type="application/json" id="world-data">
     {
       "site": { "title": {{ site.title | jsonify }}, "tagline": {{ site.tagline | jsonify }}, "home": {{ "/" | relative_url | jsonify }} },
       "collections": [
         { "label": "tech", "name": "Tech", "color": "#4fc3f7", "items": {% include world-items.html items=site.posts %} },
-        { "label": "ai", "name": "AI", "color": "#b388ff", "items": {% include world-items.html items=ai_items %} },
-        { "label": "tutorials", "name": "Tutorials", "color": "#ffab40", "items": {% include world-items.html items=tutorials_items %} },
-        { "label": "books", "name": "Books", "color": "#ffd54f", "items": {% include world-items.html items=books_items %} },
-        { "label": "life", "name": "Life", "color": "#ff8a80", "items": {% include world-items.html items=life_items %} },
-        { "label": "open", "name": "Open", "color": "#69f0ae", "items": {% include world-items.html items=open_items %} },
-        { "label": "viewed", "name": "Viewed", "color": "#80deea", "items": {% include world-items.html items=viewed_items %} }
+        { "label": "notes", "name": "学习笔记", "color": "#b388ff", "items": {% include world-items.html items=notes_items %} },
+        { "label": "research", "name": "科研进展", "color": "#ffab40", "items": {% include world-items.html items=research_items %} },
+        { "label": "life", "name": "生活随笔", "color": "#ff8a80", "items": {% include world-items.html items=life_items %} },
+        { "label": "publications", "name": "论文", "color": "#ffd54f", "items": {% include world-items.html items=publications_items %} },
+        { "label": "patents", "name": "专利", "color": "#69f0ae", "items": {% include world-items.html items=patents_items %} }
       ]
     }
   </script>
