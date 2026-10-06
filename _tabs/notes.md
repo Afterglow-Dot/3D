@@ -4,8 +4,9 @@ icon: fas fa-book
 order: 2
 permalink: /notes/
 ---
+正在建设中，敬请期待。
 
-{% for post in site.notes.docs reversed %}
+{% for post in site.notes reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 {{ post.description }}

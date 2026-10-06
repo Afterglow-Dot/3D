@@ -4,8 +4,9 @@ icon: fas fa-flask
 order: 3
 permalink: /research/
 ---
+正在建设中，敬请期待。
 
-{% for post in site.research.docs reversed %}
+{% for post in site.research reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 {{ post.description }}

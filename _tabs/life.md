@@ -5,7 +5,7 @@ order: 5
 permalink: /life/
 ---
 
-{% for post in site.life.docs reversed %}
+{% for post in site.life reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 {{ post.description }}
