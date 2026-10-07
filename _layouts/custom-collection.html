@@ -10,33 +10,39 @@ layout: page
 
 <div id="archives" class="pl-xl-3">
 
+  {% assign basename = page.name | split: '.' | first %}
+
   {% for collection in site.collections %}
-    {% assign basename = page.name | split: '.' | first %}
     {% if basename == collection.label %}
       {% assign sorted = collection.docs | sort: 'date' | reverse %}
-      {% for collect_doc in sorted %}
-        {% assign cur_year = collect_doc.date | date: '%Y' %}
 
-        {% if cur_year != last_year %}
-          {% unless forloop.first %}</ul>{% endunless %}
+      {% if sorted.size == 0 %}
+        <p class="text-muted">正在建设中，敬请期待。</p>
+      {% else %}
+        {% for collect_doc in sorted %}
+          {% assign cur_year = collect_doc.date | date: '%Y' %}
 
-          <time class="year lead d-block">{{ cur_year }}</time>
-          {{ '<ul class="list-unstyled">' }}
+          {% if cur_year != last_year %}
+            {% unless forloop.first %}</ul>{% endunless %}
 
-          {% assign last_year = cur_year %}
-        {% endif %}
+            <time class="year lead d-block">{{ cur_year }}</time>
+            <ul class="list-unstyled">
 
-        <li>
-          {% assign ts = collect_doc.date | date: '%s' %}
-          <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ collect_doc.date | date: '%d' }}</span>
-          <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
-            {{ collect_doc.date | date: df_strftime_m }}
-          </span>
-          <a href="{{ collect_doc.url | relative_url }}">{{ collect_doc.title }}</a>
-        </li>
+            {% assign last_year = cur_year %}
+          {% endif %}
 
-        {% if forloop.last %}</ul>{% endif %}
-      {% endfor %}
+          <li>
+            {% assign ts = collect_doc.date | date: '%s' %}
+            <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ collect_doc.date | date: '%d' }}</span>
+            <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
+              {{ collect_doc.date | date: df_strftime_m }}
+            </span>
+            <a href="{{ collect_doc.url | relative_url }}">{{ collect_doc.title }}</a>
+          </li>
+
+          {% if forloop.last %}</ul>{% endif %}
+        {% endfor %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 </div>

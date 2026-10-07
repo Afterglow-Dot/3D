@@ -85,7 +85,7 @@
   if (document.getElementById('sidebar')) {
     var portal = document.createElement('a');
     portal.id = 'world-portal';
-    portal.href = '/world/';
+    portal.href = '/3D/world/';
     portal.title = '进入 3D 知识图书馆';
     portal.setAttribute('aria-label', '进入 3D 知识图书馆');
     portal.innerHTML = '<span class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></span>';

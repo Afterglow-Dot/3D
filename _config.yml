@@ -68,7 +68,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: dark # [light | dark]
+theme_mode: # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
@@ -164,19 +164,15 @@ collections:
   # 研究生学习笔记
   notes:
     output: true
-    permalink: /notes/:title/
   # 科研进展
   research:
     output: true
-    permalink: /research/:title/
   # 生活随笔
   life:
     output: true
-    permalink: /life/:title/
   # 论文
   publications:
     output: true
-    permalink: /publications/:name/
 
 defaults:
   - scope:
@@ -217,6 +213,10 @@ defaults:
       layout: post
       comments: true
       toc: true
+      math: true
+      mermaid: true
+      permalink: /:collection/:year/:month/:day/:title/
+
   - scope:
       path: _research
       type: research
@@ -224,6 +224,9 @@ defaults:
       layout: post
       comments: true
       toc: true
+      math: true
+      mermaid: true
+      permalink: /:collection/:year/:month/:day/:title/
   - scope:
       path: _life
       type: life
@@ -231,12 +234,16 @@ defaults:
       layout: post
       comments: true
       toc: true
+      math: true
+      mermaid: true
+      permalink: /:collection/:year/:month/:day/:title/
   - scope:
       path: _publications
       type: publications
     values:
       layout: page
       comments: false
+      permalink: /:collection/:title/
 
 sass:
   style: compressed
