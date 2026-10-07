@@ -2,8 +2,30 @@
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 <!-- 赛博皮肤：与 /world/ 3D 页风格统一的全站样式与星空背景 -->
 <link rel="stylesheet" href="{{ '/assets/css/cyber-skin.css' | relative_url }}">
+
+<script>
+  // 注入 baseurl，供 cyber-depth.js 使用
+  window.SITE_BASEURL = "{{ site.baseurl }}";
+</script>
+
 <script defer src="{{ '/assets/js/starfield.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/js/cyber-depth.js' | relative_url }}"></script>
 {% if page.layout == 'tags' %}
   <script defer src="{{ '/assets/js/tag-sphere.js' | relative_url }}"></script>
 {% endif %}
+
+<!-- 监听主题切换按钮，实现切换后强制刷新页面 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 监听点击事件，如果点的是 Chirpy 的亮暗模式切换按钮
+    document.addEventListener('click', function(e) {
+      var toggleBtn = e.target.closest('.dropdown-item[data-theme-mode]');
+      if (toggleBtn) {
+        // 延迟 150 毫秒，等 Chirpy 把 html 标签的 data-mode 属性切换完成后，再刷新页面
+        setTimeout(function() {
+          window.location.reload();
+        }, 150);
+      }
+    });
+  });
+</script>

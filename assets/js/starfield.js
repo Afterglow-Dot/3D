@@ -6,8 +6,9 @@
 (function () {
   'use strict';
 
-  if (document.documentElement.getAttribute('data-mode') !== 'dark') return;
-
+  var _h = document.documentElement;
+  if (_h.getAttribute('data-mode') !== 'dark' && _h.getAttribute('data-bs-theme') !== 'dark') return;
+  
   var canvas = document.createElement('canvas');
   canvas.id = 'starfield';
   canvas.setAttribute('aria-hidden', 'true');

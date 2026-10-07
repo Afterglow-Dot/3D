@@ -8,7 +8,8 @@
 (function () {
   'use strict';
 
-  if (document.documentElement.getAttribute('data-mode') !== 'dark') return;
+  var _h = document.documentElement;
+  if (_h.getAttribute('data-mode') !== 'dark' && _h.getAttribute('data-bs-theme') !== 'dark') return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var html = document.documentElement;
@@ -85,7 +86,7 @@
   if (document.getElementById('sidebar')) {
     var portal = document.createElement('a');
     portal.id = 'world-portal';
-    portal.href = '/3D/world/';
+    portal.href = (window.SITE_BASEURL || '') + '/world/';
     portal.title = '进入 3D 知识图书馆';
     portal.setAttribute('aria-label', '进入 3D 知识图书馆');
     portal.innerHTML = '<span class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></span>';

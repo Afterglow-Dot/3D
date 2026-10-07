@@ -7,7 +7,7 @@
   调色板与 assets/js/3d-world.js 一致：#7dd3fc / #c4b5fd / #f0abfc，底色 #05070d。
 */
 
-html[data-mode="dark"] {
+html[data-mode="dark"], html[data-bs-theme="dark"] {
   /* Framework */
   --main-bg: transparent;
   --main-border-color: rgb(125 211 252 / 12%);
@@ -65,7 +65,7 @@ html[data-mode="dark"] {
 }
 
 /* ---------- 背景：纯深空，星空画在 starfield.js 的固定 canvas 上 ---------- */
-html[data-mode="dark"] {
+html[data-mode="dark"], html[data-bs-theme="dark"] {
   background: #05070d;
 
   body {
@@ -196,7 +196,7 @@ html[data-mode="dark"] {
 }
 
 /* ---------- 3D 纵深交互（cyber-depth.js 给 html 加 depth-on 后生效） ---------- */
-html[data-mode="dark"].depth-on {
+html[data-mode="dark"].depth-on, html[data-bs-theme="dark"].depth-on {
   /* 滚动入场：从深处带透视旋转浮现 */
   .reveal-init {
     opacity: 0;
@@ -290,7 +290,7 @@ html[data-mode="dark"].depth-on {
 }
 
 /* 浏览器不支持跨页 View Transitions 时，cyber-depth.js 用这两个类做同款效果 */
-html[data-mode="dark"].depth-on {
+html[data-mode="dark"].depth-on, html[data-bs-theme="dark"].depth-on {
   body.page-arrive {
     animation: vt-arrive 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }
@@ -455,7 +455,7 @@ html[data-mode="dark"].depth-on {
 }
 
 /* ---------- 回到顶部：火箭发射 ---------- */
-html[data-mode="dark"] #back-to-top.launching {
+html[data-mode="dark"] #back-to-top.launching, html[data-bs-theme="dark"] #back-to-top.launching {
   animation: rocket-launch 0.85s cubic-bezier(0.5, -0.3, 0.8, 1) both;
   pointer-events: none;
 
@@ -520,7 +520,7 @@ html[data-mode="dark"] #back-to-top.launching {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html[data-mode="dark"] .card {
+  html[data-mode="dark"] .card, html[data-bs-theme="dark"] .card {
     transition: none;
 
     &:hover {
