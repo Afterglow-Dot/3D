@@ -62,3 +62,10 @@
     font-size: 0.95em;
   }
 }
+/* 侧栏图标行移到顶部后收紧上下间距 */
+#sidebar .sidebar-bottom {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
