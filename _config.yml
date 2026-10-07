@@ -161,16 +161,16 @@ collections:
     output: true
     sort_by: order
   # custom collection type
-  # 研究生学习笔记
+  # 学习笔记
   notes:
     output: true
   # 科研进展
   research:
     output: true
-  # 生活随笔
+  # 日常记录
   life:
     output: true
-  # 论文
+  # 学术成果
   publications:
     output: true
 
