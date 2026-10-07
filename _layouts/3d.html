@@ -92,10 +92,19 @@
   </script>
 </head>
 <body>
-  {% assign empty_array = '' | split: '' %}
-  {% assign research_items = site.research.docs | default: empty_array | sort: "date" | reverse %}
-  {% assign life_items = site.life.docs | default: empty_array | sort: "date" | reverse %}
-  {% assign publications_items = site.publications.docs | default: empty_array | sort: "date" | reverse %}
+  {% assign life_items = '' | split: '' %}
+  {% assign research_items = '' | split: '' %}
+  {% assign publications_items = '' | split: '' %}
+  {% for collection in site.collections %}
+    {% if collection.label == 'life' %}
+      {% assign life_items = collection.docs | sort: "date" | reverse %}
+    {% elsif collection.label == 'research' %}
+      {% assign research_items = collection.docs | sort: "date" | reverse %}
+    {% elsif collection.label == 'publications' %}
+      {% assign publications_items = collection.docs | sort: "date" | reverse %}
+    {% endif %}
+  {% endfor %}
+
   <script type="application/json" id="world-data">
     {
       "site": { "title": {{ site.title | jsonify }}, "tagline": {{ site.tagline | jsonify }}, "home": {{ "/" | relative_url | jsonify }} },
