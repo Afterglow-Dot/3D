@@ -2,7 +2,7 @@
 layout: page
 title: 3D World
 icon: fas fa-cube
-order: 6
+order: 5
 permalink: /world/
 ---
 

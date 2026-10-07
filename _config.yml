@@ -161,14 +161,11 @@ collections:
     output: true
     sort_by: order
   # custom collection type
-  # 学习笔记
-  notes:
+  # 日常记录
+  life:
     output: true
   # 科研进展
   research:
-    output: true
-  # 日常记录
-  life:
     output: true
   # 学术成果
   publications:
@@ -207,8 +204,8 @@ defaults:
       swcache: true
   # 以下为自定义集合的默认配置
   - scope:
-      path: _notes
-      type: notes
+      path: _life
+      type: life
     values:
       layout: post
       comments: true
@@ -216,20 +213,9 @@ defaults:
       math: true
       mermaid: true
       permalink: /:collection/:year/:month/:day/:title/
-
   - scope:
       path: _research
       type: research
-    values:
-      layout: post
-      comments: true
-      toc: true
-      math: true
-      mermaid: true
-      permalink: /:collection/:year/:month/:day/:title/
-  - scope:
-      path: _life
-      type: life
     values:
       layout: post
       comments: true

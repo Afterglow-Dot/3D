@@ -4,9 +4,8 @@
 
 CONTENT_PREFIXES = %w[
   _posts/
-  _notes/
-  _research/
   _life/
+  _research/
   _publications/
 ].freeze
 
