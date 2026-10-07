@@ -54,6 +54,8 @@
    * 把浅色节点的文字换成深色。
    */
   function fixLabelContrast() {
+    var _h = document.documentElement;
+    if (_h.getAttribute('data-mode') !== 'dark' && _h.getAttribute('data-bs-theme') !== 'dark') return;
     document.querySelectorAll('.mermaid .node, .mermaid .cluster').forEach(function (node) {
       var shape = node.querySelector('rect, polygon, circle, ellipse, path');
       if (!shape) return;
