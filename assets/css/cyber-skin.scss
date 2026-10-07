@@ -177,13 +177,10 @@ html[data-mode="dark"], html[data-bs-theme="dark"] {
   }
 
   /* ---------- 集合徽章：与 3D 世界书架同色 ---------- */
-  .post-badge--tech { color: #4fc3f7; border-color: #4fc3f7; }
-  .post-badge--ai { color: #b388ff; border-color: #b388ff; }
-  .post-badge--open { color: #69f0ae; border-color: #69f0ae; }
-  .post-badge--tutorial { color: #ffab40; border-color: #ffab40; }
-  .post-badge--book { color: #ffd54f; border-color: #ffd54f; }
+  .post-badge--posts { color: #4fc3f7; border-color: #4fc3f7; }
   .post-badge--life { color: #ff8a80; border-color: #ff8a80; }
-  .post-badge--viewed { color: #80deea; border-color: #80deea; }
+  .post-badge--research { color: #ffab40; border-color: #ffab40; }
+  .post-badge--publications { color: #ffd54f; border-color: #ffd54f; }
 
   .post-badge {
     background: rgb(13 18 32 / 60%);
