@@ -92,9 +92,10 @@
   </script>
 </head>
 <body>
-  {% assign research_items = site.research.docs | sort: "date" | reverse %}
-  {% assign life_items = site.life.docs | sort: "date" | reverse %}
-  {% assign publications_items = site.publications.docs | sort: "date" | reverse %}
+  {% assign empty_array = '' | split: '' %}
+  {% assign research_items = site.research.docs | default: empty_array | sort: "date" | reverse %}
+  {% assign life_items = site.life.docs | default: empty_array | sort: "date" | reverse %}
+  {% assign publications_items = site.publications.docs | default: empty_array | sort: "date" | reverse %}
   <script type="application/json" id="world-data">
     {
       "site": { "title": {{ site.title | jsonify }}, "tagline": {{ site.tagline | jsonify }}, "home": {{ "/" | relative_url | jsonify }} },
