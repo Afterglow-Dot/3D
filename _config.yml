@@ -199,7 +199,7 @@ defaults:
     values:
       swcache: false
   - scope:
-      path: assets/js/dist
+      path: assets/js
     values:
       swcache: false
   # 以下为自定义集合的默认配置
