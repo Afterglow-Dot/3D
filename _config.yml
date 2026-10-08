@@ -197,11 +197,11 @@ defaults:
   - scope:
       path: assets/img/favicons
     values:
-      swcache: true
+      swcache: false
   - scope:
       path: assets/js/dist
     values:
-      swcache: true
+      swcache: false
   # 以下为自定义集合的默认配置
   - scope:
       path: _life
