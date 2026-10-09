@@ -1,3 +1,5 @@
+---
+---
 /**
  * 经典页面的 3D 纵深交互（与 cyber-skin.scss 的 html.depth-on 规则配套）：
  * - 文章元素滚动入场：从深处带透视旋转浮现
@@ -86,7 +88,7 @@
   if (document.getElementById('sidebar')) {
     var portal = document.createElement('a');
     portal.id = 'world-portal';
-    portal.href = (window.SITE_BASEURL || '') + '/world/';
+    portal.href = '{{ site.baseurl }}/world/';
     portal.title = '进入 3D 知识图书馆';
     portal.setAttribute('aria-label', '进入 3D 知识图书馆');
     portal.innerHTML = '<span class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></span>';
