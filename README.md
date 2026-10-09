@@ -24,7 +24,6 @@
 | `_plugins/`          | 生成分类/标签归档页、用 git 提交时间填最后修改时间         |
 | `_data/`             | 数据文件：联系方式、分享平台                               |
 | `assets/`            | 图片、CSS、JS 等静态资源                                   |
-| `tools/`             | `run.sh` 本地预览、`test.sh` 生产构建与检查                |
 | `.github/workflows/` | GitHub Actions 自动部署配置                                |
 
 ---
@@ -48,7 +47,7 @@
 
 - 查看部署状态：进入 GitHub 仓库的 **Actions** 页面。
 - 构建流程：Jekyll 构建 → htmlproofer 检查 → 发布 Pages。
-- 如果 Actions 显示红色叉号，点进去查看报错日志，本地用 `bash tools/test.sh` 复现。
+- 如果 Actions 显示红色叉号，点进去查看报错日志。
 
 ---
 
