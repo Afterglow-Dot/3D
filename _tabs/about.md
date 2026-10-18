@@ -1,4 +1,5 @@
 ---
+layout: page
 title: 关于我
 icon: fas fa-user
 order: 1

@@ -2,15 +2,15 @@
 #
 # Check for changed posts and collection documents
 
-CONTENT_PREFIXES = %w[
-  _posts/
-  _life/
-  _research/
-  _publications/
+CONTENT_COLLECTIONS = %i[
+  posts
+  life
+  research
+  publications
 ].freeze
 
 Jekyll::Hooks.register :documents, :post_init do |doc|
-  next unless CONTENT_PREFIXES.any? { |prefix| doc.path.start_with?(prefix) }
+  next unless CONTENT_COLLECTIONS.include?(doc.type)
 
   commit_num = `git rev-list --count HEAD "#{doc.path}"`
 

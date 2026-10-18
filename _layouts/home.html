@@ -20,12 +20,14 @@ refactor: true
 {% endfor %}
 
 {% for doc in site.life %}
-  {% assign pin_rank = 0 %}
-  {% if doc.pin %}
-    {% assign pin_rank = 1 %}
-  {% endif %}
-  {% capture elem %}{{ pin_rank }}::{{ doc.date | date: "%Y%m%d%H%M%S" }}::life::{{ forloop.index0 }}{% endcapture %}
-  {% assign all_items = all_items | push: elem %}
+  {% unless doc.hidden %}
+    {% assign pin_rank = 0 %}
+    {% if doc.pin %}
+      {% assign pin_rank = 1 %}
+    {% endif %}
+    {% capture elem %}{{ pin_rank }}::{{ doc.date | date: "%Y%m%d%H%M%S" }}::life::{{ forloop.index0 }}{% endcapture %}
+    {% assign all_items = all_items | push: elem %}
+  {% endunless %}
 {% endfor %}
 
 {% assign all_items = all_items | sort | reverse %}
