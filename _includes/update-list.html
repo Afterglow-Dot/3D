@@ -20,10 +20,10 @@
   {% assign all_list = all_list | push: elem %}
 {% endfor %}
 
-{% for doc in site.research %}
+{% for doc in site.projects %}
   {% assign datetime = doc.last_modified_at | default: doc.date %}
   {% capture elem %}
-    {{- datetime | date: "%Y%m%d%H%M%S" -}}::research::{{- forloop.index0 -}}
+    {{- datetime | date: "%Y%m%d%H%M%S" -}}::projects::{{- forloop.index0 -}}
   {% endcapture %}
   {% assign all_list = all_list | push: elem %}
 {% endfor %}
@@ -57,8 +57,8 @@
           {% assign post = site.posts[index] %}
         {% elsif col == 'life' %}
           {% assign post = site.life[index] %}
-        {% elsif col == 'research' %}
-          {% assign post = site.research[index] %}
+        {% elsif col == 'projects' %}
+          {% assign post = site.projects[index] %}
         {% elsif col == 'publications' %}
           {% assign post = site.publications[index] %}
         {% endif %}

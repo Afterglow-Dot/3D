@@ -165,8 +165,8 @@ collections:
   # 日常记录
   life:
     output: true
-  # 科研进展
-  research:
+  # 项目实践
+  projects:
     output: true
   # 学术成果
   publications:
@@ -196,7 +196,7 @@ defaults:
       toc: true
       permalink: /:collection/:year/:month/:day/:title/
   - scope:
-      type: research
+      type: projects
     values:
       layout: post
       toc: true
@@ -222,18 +222,5 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
-  - docs
-  - tools
   - README.md
-  - purgecss.js
   - "*.config.js"
-  - "package*.json"
-
-jekyll-archives:
-  enabled: []
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/

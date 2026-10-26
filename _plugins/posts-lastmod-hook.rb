@@ -5,7 +5,7 @@
 CONTENT_COLLECTIONS = %i[
   posts
   life
-  research
+  projects
   publications
 ].freeze
 

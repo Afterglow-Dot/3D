@@ -93,13 +93,13 @@
 </head>
 <body>
   {% assign life_items = '' | split: '' %}
-  {% assign research_items = '' | split: '' %}
+  {% assign projects_items = '' | split: '' %}
   {% assign publications_items = '' | split: '' %}
   {% for collection in site.collections %}
     {% if collection.label == 'life' %}
       {% assign life_items = collection.docs | sort: "date" | reverse %}
-    {% elsif collection.label == 'research' %}
-      {% assign research_items = collection.docs | sort: "date" | reverse %}
+    {% elsif collection.label == 'projects' %}
+      {% assign projects_items = collection.docs | sort: "date" | reverse %}
     {% elsif collection.label == 'publications' %}
       {% assign publications_items = collection.docs | sort: "date" | reverse %}
     {% endif %}
@@ -111,7 +111,7 @@
       "collections": [
         { "label": "posts", "name": "文章", "color": "#4fc3f7", "items": {% include world-items.html items=site.posts %} },
         { "label": "life", "name": "日常记录", "color": "#ff8a80", "items": {% include world-items.html items=life_items %} },
-        { "label": "research", "name": "科研进展", "color": "#ffab40", "items": {% include world-items.html items=research_items %} },
+        { "label": "projects", "name": "项目实践", "color": "#ffab40", "items": {% include world-items.html items=projects_items %} },
         { "label": "publications", "name": "学术成果", "color": "#ffd54f", "items": {% include world-items.html items=publications_items %} }
       ]
     }
