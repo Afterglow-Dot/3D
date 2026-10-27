@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 关于我
-description: "我的个人主页，记录学习笔记、科研进展和读研日常。"
+description: "我的个人主页，记录学习笔记、项目实践和读研日常。"
 icon: fas fa-user
 order: 1
 permalink: /about/
